@@ -7,221 +7,248 @@
     <title>Resume manager</title>
     <link rel="stylesheet" href="./style/common.css">
     <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
         table,td {border:1px solid #333}
-        td input {width: 100px}
+        td input {width:100px}
+        ul {margin:0}
+        body {background:#f6f6f6;width:100%;font-family:"Noto Sans KR",sans-serif}
+        h2{font-size:16px;font-weight:700;height:40px;line-height:40px;padding-left:30px}
+        section{margin-bottom:40px}
+        section h2:before{content:"- "}
+        input[type=text]{box-sizing:border-box;width:100%;padding:10px 24px;border:1px solid #d0d4d9;border-radius:3px;font-size:14px}
+        input[type=text]:focus{border:1px solid #666;outline:none}
+        input[type=text]:hover{border:1px solid #666;outline:none}
+        .wrapper{background:pink;max-width:1280px;margin:0 auto}
+        .wrapper>section{background:#fff}
+        .wrapper>section h2 {background:#ebebeb}
+
+        .profile label {display:inline-block;width:120px;padding-left:0 10px;margin-right:20px}
+        .profile li {margin:15px 0}
+        .profile:after{content:"";display:block;clear:both}
+        .short{max-width:220px}
+        .long{max-width:380px}
     </style>
 </head>
 <body>
-    <h2>Resume Manager EDIT</h2>
-    <!-- 기본정보 -->
-    <section>
-        <h2>기본정보</h2>
-        <!-- profile image -->
-        <div>
-            <input type="file">
-        </div>
-        <!-- basic information -->
-        <ul>
-            <li>
-                <span>이름</span><input type="text">
-            </li>
-            <li>
-                <span>생년월일</span><input type="text">
-            </li>
-            <li>
-                <span>희망직무</span><input type="text">
-            </li>
-            <li>
-                <span>한 줄 소개</span><input type="text">
-            </li>
-        </ul>
-        <!-- contact -->
-        <ul>
-            <li>
-                <span>연락처</span><input type="text">
-            </li>
-            <li>
-                <span>Homepage 주소</span><input type="text">
-            </li>
-            <li>
-                <span>Github 주소</span><input type="text">
-            </li>
-            <li>
-                <span>Facebook 주소</span><input type="text">
-            </li>
-        </ul>
-    </section>
-    <!-- 보유기술 -->
-    <section>
-        <h2>보유기술</h2>
-        <div>매우능숙</div>
-        <ul>
-            <li>기술1</li>
-            <li>기술2</li>
-            <li>기술3</li>
-        </ul>
-        <div>능숙</div>
-        <ul>
-            <li>기술1</li>
-            <li>기술2</li>
-            <li>기술3</li>
-        </ul>
-        <div>활용가능</div>
-        <ul>
-            <li>기술1</li>
-            <li>기술2</li>
-            <li>기술3</li>
-        </ul>
-        <div>
-            <select name="" id="">
-                <option value="">-- 숙련도 선택 --</option>
-                <option value="best">매우능숙</option>
-                <option value="good">능숙</option>
-                <option value="able">활용가능</option>
-            </select>
-            <button>취소</button>
-            <button>확인</button>
-        </div>
-    </section>
-    <!-- 학력사항 -->
-    <section>
-        <h2>학력사항</h2>
-        <table>
-            <thead></thead>
-            <tbody>
-                <tr>
-                    <td>학교명</td>
-                    <td>전공</td>
-                    <td>기간</td>
-                    <td>졸업여부</td>
-                    <td>관리</td>
-                </tr>
-                <tr>
-                    <td>ㅁㅁ대학교</td>
-                    <td>ㅁㅁ학과</td>
-                    <td>3000-03-01 부터 3004-12-31 까지</td>
-                    <td>졸업</td>
-                    <td>삭제</td>
-                </tr>
-                <tr>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td>
-                        <select name="" id="">
-                            <option value="ing">재학</option>
-                            <option value="end">졸업</option>
-                            <option value="willend">졸업예정</option>
-                            <option value="stop">중퇴</option>
-                        </select>
-                    </td>
-                    <td>삭제</td>
-                </tr>
-            </tbody>
-        </table>
-        <button>추가하기</button>
+    <div class="wrapper">
+        <h2>Resume Manager EDIT</h2>
+        <!-- 기본정보 -->
+        <section>
+            <h2>기본정보</h2>
+            <!-- profile image -->
+            <div class="profile" style="padding:40px">
+                <div style="float:left;padding:0 10px">
+                    <input type="file">
+                </div>
+                <div style="float:right;width:75%">
+                    <!-- basic information -->
+                    <ul class="basic-info" style="border-bottom:1px solid #ebebeb">
+                        <li>
+                            <label>이름</label><input type="text" class="short">
+                        </li>
+                        <li>
+                            <label>생년월일</label><input type="text" class="short">
+                        </li>
+                        <li>
+                            <label>희망직무</label><input type="text" class="short">
+                        </li>
+                        <li>
+                            <label>한 줄 소개</label><input type="text" class="long">
+                        </li>
+                    </ul>
+                    <!-- contact -->
+                    <ul>
+                        <li>
+                            <label>전화번호</label><input type="text" class="long">
+                        </li>
+                        <li>
+                            <label>이메일</label><input type="text" class="long">
+                        </li>
+                        <li>
+                            <label>Homepage 주소</label><input type="text" class="long">
+                        </li>
+                        <li>
+                            <label>Github 주소</label><input type="text" class="long">
+                        </li>
+                        <li>
+                            <label>Facebook 주소</label><input type="text" class="long">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- 보유기술 -->
+        <section>
+            <h2>보유기술</h2>
+            <div>매우능숙</div>
+            <ul>
+                <li>기술1</li>
+                <li>기술2</li>
+                <li>기술3</li>
+            </ul>
+            <div>능숙</div>
+            <ul>
+                <li>기술1</li>
+                <li>기술2</li>
+                <li>기술3</li>
+            </ul>
+            <div>활용가능</div>
+            <ul>
+                <li>기술1</li>
+                <li>기술2</li>
+                <li>기술3</li>
+            </ul>
+            <div>
+                <select name="" id="">
+                    <option value="">-- 숙련도 선택 --</option>
+                    <option value="best">매우능숙</option>
+                    <option value="good">능숙</option>
+                    <option value="able">활용가능</option>
+                </select>
+                <button>취소</button>
+                <button>확인</button>
+            </div>
+        </section>
+        <!-- 학력사항 -->
+        <section>
+            <h2>학력사항</h2>
+            <table>
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <td>학교명</td>
+                        <td>전공</td>
+                        <td>기간</td>
+                        <td>졸업여부</td>
+                        <td>관리</td>
+                    </tr>
+                    <tr>
+                        <td>ㅁㅁ대학교</td>
+                        <td>ㅁㅁ학과</td>
+                        <td>3000-03-01 부터 3004-12-31 까지</td>
+                        <td>졸업</td>
+                        <td>삭제</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td>
+                            <select name="" id="">
+                                <option value="ing">재학</option>
+                                <option value="end">졸업</option>
+                                <option value="willend">졸업예정</option>
+                                <option value="stop">중퇴</option>
+                            </select>
+                        </td>
+                        <td>삭제</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button>추가하기</button>
 
-    </section>
-    <!-- 경력사항 -->
-    <section>
-        <h2>경력사항</h2>
-        <table>
-            <thead></thead>
-            <tbody>
-                <tr>
-                    <td>근무처</td>
-                    <td>담당업무</td>
-                    <td>근무기간</td>
-                    <td>최종직위</td>
-                    <td>관리</td>
-                </tr>
-                <tr>
-                    <td>ㅁㅁ회사</td>
-                    <td>프론트엔드개발</td>
-                    <td>3000-03-01 부터 3004-12-31 까지</td>
-                    <td>사원</td>
-                    <td>삭제</td>
-                </tr>
-                <tr>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td>삭제</td>
-                </tr>
-            </tbody>
-        </table>
-        <button>추가하기</button>
-    </section>
-    <!-- 자격사항 -->
-    <section>
-        <h2>자격사항</h2>
-        <table>
-            <thead></thead>
-            <tbody>
-                <tr>
-                    <td>자격증이름</td>
-                    <td>발행처</td>
-                    <td>취득일</td>
-                    <td>관리</td>
-                </tr>
-                <tr>
-                    <td colspan="4">등록된 자격사항이 없습니다.</td>
-                </tr>
-                <tr>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td><input type="text"></td>
-                    <td>삭제</td>
-                </tr>
-            </tbody>
-        </table>
-        <button>추가하기</button>
-    </section>
-    <!-- 자기소개서 -->
-    <section>
-        <h2>자기소개서</h2>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-    </section>
-    <!-- 프로젝트 -->
-    <section>
-        <h2>프로젝트</h2>
-        <ul>
-            <li>
-                <ul>
-                    <li>
-                        <span>프로젝트명</span>
-                        <input type="text" name="" id="">
-                    </li>
-                    <li>
-                        <span>기간</span>
-                        <input type="text" name="" id="">
-                    </li>
-                    <li>
-                        <span>역할</span>
-                        <input type="text" name="" id="">
-                    </li>
-                    <li>
-                        <span>프로젝트 홈페이지</span>
-                        <input type="text" name="" id="">
-                    </li>
-                    <li>
-                        <span>Youtube</span>
-                        <input type="text" name="" id="">
-                    </li>
-                    <li>
-                        <span>Slideshare</span>
-                        <input type="text" name="" id="">
-                    </li>
-                    <li>
-                        <span>내용</span>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                    </li>
-                </ul>
-                <button>삭제</button>
-            </li>
-        </ul>
-        <button>추가하기</button>
-    </section>
+        </section>
+        <!-- 경력사항 -->
+        <section>
+            <h2>경력사항</h2>
+            <table>
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <td>근무처</td>
+                        <td>담당업무</td>
+                        <td>근무기간</td>
+                        <td>최종직위</td>
+                        <td>관리</td>
+                    </tr>
+                    <tr>
+                        <td>ㅁㅁ회사</td>
+                        <td>프론트엔드개발</td>
+                        <td>3000-03-01 부터 3004-12-31 까지</td>
+                        <td>사원</td>
+                        <td>삭제</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td>삭제</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button>추가하기</button>
+        </section>
+        <!-- 자격사항 -->
+        <section>
+            <h2>자격사항</h2>
+            <table>
+                <thead></thead>
+                <tbody>
+                    <tr>
+                        <td>자격증이름</td>
+                        <td>발행처</td>
+                        <td>취득일</td>
+                        <td>관리</td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">등록된 자격사항이 없습니다.</td>
+                    </tr>
+                    <tr>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td>삭제</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button>추가하기</button>
+        </section>
+        <!-- 자기소개서 -->
+        <section>
+            <h2>자기소개서</h2>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </section>
+        <!-- 프로젝트 -->
+        <section>
+            <h2>프로젝트</h2>
+            <ul>
+                <li>
+                    <ul>
+                        <li>
+                            <span>프로젝트명</span>
+                            <input type="text" name="" id="">
+                        </li>
+                        <li>
+                            <span>기간</span>
+                            <input type="text" name="" id="">
+                        </li>
+                        <li>
+                            <span>역할</span>
+                            <input type="text" name="" id="">
+                        </li>
+                        <li>
+                            <span>프로젝트 홈페이지</span>
+                            <input type="text" name="" id="">
+                        </li>
+                        <li>
+                            <span>Youtube</span>
+                            <input type="text" name="" id="">
+                        </li>
+                        <li>
+                            <span>Slideshare</span>
+                            <input type="text" name="" id="">
+                        </li>
+                        <li>
+                            <span>내용</span>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </li>
+                    </ul>
+                    <button>삭제</button>
+                </li>
+            </ul>
+            <button>추가하기</button>
+        </section>
+    </div>
 </body>
 </html>
