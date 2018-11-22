@@ -15,12 +15,22 @@
         h2{font-size:16px;font-weight:700;height:40px;line-height:40px;padding-left:30px}
         section{margin-bottom:40px}
         section h2:before{content:"- "}
-        input[type=text]{box-sizing:border-box;width:100%;padding:10px 24px;border:1px solid #d0d4d9;border-radius:3px;font-size:14px}
+        input[type=text]{box-sizing:border-box;width:100%;padding:10px 24px;border:1px solid #d0d4d9;border-radius:3px;font-size:14px;transition:border 0.25s}
         input[type=text]:focus{border:1px solid #666;outline:none}
-        input[type=text]:hover{border:1px solid #666;outline:none}
+        input[type=text]:hover{border:1px solid #666;outline:none;transition:border 0.25s}
+        select{box-sizing:border-box;padding:10px 24px;border:1px solid #d0d4d9;border-radius:3px;font-size:14px;transition:border 0.25s}
+        input[type=text]:focus{border:1px solid #666;outline:none}
+        input[type=text]:hover{border:1px solid #666;outline:none;transition:border 0.25s}
         .wrapper{background:pink;max-width:1280px;margin:0 auto}
         .wrapper>section{background:#fff}
         .wrapper>section h2 {background:#ebebeb}
+
+        .visible{display:block}
+        .hidden{display:none}
+        .inner-section{padding:40px}
+        .btn{width:130px;height:40px;border-radius:40px;font-size:14px;font-weight:700;box-shadow:0 2px 1px 0 rgba(0,0,0,0.05)}
+        .btn-confirm{background:#323232;color:#fff;border:1px solid #323232}
+        .btn-cancel{background:#fff;color:#4c4c4c;border:1px solid #ebebeb}
 
         .profile label {display:inline-block;width:120px;padding-left:0 10px;margin-right:20px}
         .profile li {margin:15px 0}
@@ -36,13 +46,13 @@
         <section>
             <h2>기본정보</h2>
             <!-- profile image -->
-            <div class="profile" style="padding:40px">
+            <div class="inner-section profile">
                 <div style="float:left;padding:0 10px">
                     <input type="file">
                 </div>
                 <div style="float:right;width:75%">
                     <!-- basic information -->
-                    <ul class="basic-info" style="border-bottom:1px solid #ebebeb">
+                    <ul style="border-bottom:1px solid #ebebeb">
                         <li>
                             <label>이름</label><input type="text" class="short">
                         </li>
@@ -79,105 +89,139 @@
         </section>
         <!-- 보유기술 -->
         <section>
+            <style>
+            #skills label{padding-left:30px;margin-bottom:10px;display:inline-block}
+            .skills{width:100%}
+            .skills>li{display:inline-block;border:1px solid #d0d4d9;border-radius:30px;padding:8px 10px 8px 20px;margin-right:15px;margin-bottom:10px;font-size:12px}
+            .skills span{vertical-align:middle}
+            .skills>li:focus{border:1px solid #666;outline:none}
+            .skills>li:hover{border:1px solid #666;outline:none;transition:border 0.25s}
+            .skills>li:before{content:"# "}
+            .skills>li:after{content:"\2715";display:inline-block;margin-left:20px;height:20px;width:20px;border:1px solid #f0f0f0;border-radius:100%;background:#f7f7f7;vertical-align:middle;text-align:center;font-size:13px}
+            </style>
             <h2>보유기술</h2>
-            <div>매우능숙</div>
-            <ul>
-                <li>기술1</li>
-                <li>기술2</li>
-                <li>기술3</li>
-            </ul>
-            <div>능숙</div>
-            <ul>
-                <li>기술1</li>
-                <li>기술2</li>
-                <li>기술3</li>
-            </ul>
-            <div>활용가능</div>
-            <ul>
-                <li>기술1</li>
-                <li>기술2</li>
-                <li>기술3</li>
-            </ul>
-            <div>
-                <select name="" id="">
-                    <option value="">-- 숙련도 선택 --</option>
-                    <option value="best">매우능숙</option>
-                    <option value="good">능숙</option>
-                    <option value="able">활용가능</option>
-                </select>
-                <button>취소</button>
-                <button>확인</button>
+            <div id="skills" class="inner-section">
+                <label>매우능숙</label>
+                <ul class="skills">
+                    <li><span>HTML5</span></li>
+                    <li><span>CSS3</span></li>
+                    <li><span>JavaScript</span></li>
+                </ul>
+                <label>능숙</label>
+                <ul class="skills">
+                    <li><span>ECMAScript2015</span></li>
+                    <li><span>git</span></li>
+                    <li><span>Angular</span></li>
+                </ul>
+                <label>활용가능</label>
+                <ul class="skills">
+                    <li><span>React</span></li>
+                    <li><span>Vue.js</span></li>
+                    <li><span>Restful API</span></li>
+                </ul>
+                <div style="border-top:1px solid #ebebeb">
+                    <div class="visible">
+                        <button id="addSkill" class="btn btn-confirm" style="margin:20px 50%;transform:translateX(-50%);">추가하기</button>
+                    </div>
+                    <div class="hidden" style="margin:20px 0">
+                        <select name="" id="" style="width:140px;height:40px;line-height:40px;vertical-align:middle">
+                            <option value="">-- 숙련도 선택 --</option>
+                            <option value="best">매우능숙</option>
+                            <option value="good">능숙</option>
+                            <option value="able">활용가능</option>
+                        </select>
+                        <input type="text" class="short" style="height:40px;line-height:40px;vertical-align:middle;margin-left:8px">
+                        <button id="cancelAddSkill" class="btn btn-cancel" style="float:right;margin-left:8px">취소</button>
+                        <button class="btn btn-confirm" style="float:right">확인</button>
+                    </div>
+                </div>
+                <script>
+                document.querySelector('#addSkill').addEventListener('click',e=>{
+                    visibilityChange(e);
+                })
+                document.querySelector('#cancelAddSkill').addEventListener('click',e=>{
+                    visibilityChange(e);
+                })
+                let visibilityChange=e=>{
+                    let elementSibling = e.path[1].nextElementSibling ? e.path[1].nextElementSibling : e.path[1].previousElementSibling
+                    e.path[1].className = "visible" ? "hidden" : "visible";
+                    elementSibling.className = "hidden" ? "visible" : "hidden";
+                }
+                </script>
             </div>
         </section>
         <!-- 학력사항 -->
         <section>
             <h2>학력사항</h2>
-            <table>
-                <thead></thead>
-                <tbody>
-                    <tr>
-                        <td>학교명</td>
-                        <td>전공</td>
-                        <td>기간</td>
-                        <td>졸업여부</td>
-                        <td>관리</td>
-                    </tr>
-                    <tr>
-                        <td>ㅁㅁ대학교</td>
-                        <td>ㅁㅁ학과</td>
-                        <td>3000-03-01 부터 3004-12-31 까지</td>
-                        <td>졸업</td>
-                        <td>삭제</td>
-                    </tr>
-                    <tr>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td>
-                            <select name="" id="">
-                                <option value="ing">재학</option>
-                                <option value="end">졸업</option>
-                                <option value="willend">졸업예정</option>
-                                <option value="stop">중퇴</option>
-                            </select>
-                        </td>
-                        <td>삭제</td>
-                    </tr>
-                </tbody>
-            </table>
-            <button>추가하기</button>
-
+            <div class="inner-section">
+                <table>
+                    <thead></thead>
+                    <tbody>
+                        <tr>
+                            <td>학교명</td>
+                            <td>전공</td>
+                            <td>기간</td>
+                            <td>졸업여부</td>
+                            <td>관리</td>
+                        </tr>
+                        <tr>
+                            <td>ㅁㅁ대학교</td>
+                            <td>ㅁㅁ학과</td>
+                            <td>3000-03-01 부터 3004-12-31 까지</td>
+                            <td>졸업</td>
+                            <td>삭제</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>
+                                <select name="" id="">
+                                    <option value="ing">재학</option>
+                                    <option value="end">졸업</option>
+                                    <option value="willend">졸업예정</option>
+                                    <option value="stop">중퇴</option>
+                                </select>
+                            </td>
+                            <td>삭제</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button>추가하기</button>
+            </div>
         </section>
         <!-- 경력사항 -->
         <section>
             <h2>경력사항</h2>
-            <table>
-                <thead></thead>
-                <tbody>
-                    <tr>
-                        <td>근무처</td>
-                        <td>담당업무</td>
-                        <td>근무기간</td>
-                        <td>최종직위</td>
-                        <td>관리</td>
-                    </tr>
-                    <tr>
-                        <td>ㅁㅁ회사</td>
-                        <td>프론트엔드개발</td>
-                        <td>3000-03-01 부터 3004-12-31 까지</td>
-                        <td>사원</td>
-                        <td>삭제</td>
-                    </tr>
-                    <tr>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td><input type="text"></td>
-                        <td>삭제</td>
-                    </tr>
-                </tbody>
-            </table>
-            <button>추가하기</button>
+            <div class="inner-section">
+                <table>
+                    <thead></thead>
+                    <tbody>
+                        <tr>
+                            <td>근무처</td>
+                            <td>담당업무</td>
+                            <td>근무기간</td>
+                            <td>최종직위</td>
+                            <td>관리</td>
+                        </tr>
+                        <tr>
+                            <td>ㅁㅁ회사</td>
+                            <td>프론트엔드개발</td>
+                            <td>3000-03-01 부터 3004-12-31 까지</td>
+                            <td>사원</td>
+                            <td>삭제</td>
+                        </tr>
+                        <tr>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td>삭제</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button>추가하기</button>
+            </div>
         </section>
         <!-- 자격사항 -->
         <section>
