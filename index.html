@@ -5,8 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Resume Manager</title>
+    <link rel="stylesheet" href="./style/common.css">
+    <style>
+    .wrapper{max-width:1280px;margin:0 auto}
+    .wrapper>section{background:#fff;width:600px;margin:0 auto}
+    .wrapper>section h2{background:#d9d9d9}
+    .resume{border:1px solid #e6e6e6;margin:20px 30px;padding:20px;box-shadow:0 5px 10px 0 rgba(0,0,0,0.08);color:#4c4c4c}
+    .resume>div{display:inline-block;width:50%}
+    .resume:after{content:"";display:block;clear:both}
+    .resume label{background:#ed234b;padding:2px 5px;border-radius:4px;font-size:14px;color:#fff;}
+    .resume-title{font-size:18px;font-weight:700;margin-top:8px;}
+    .resume-school{font-size:14px}
+    .left{float:left;}
+    .right{float:right;}
+    .right div{margin: 4px 0}
+    .paging{margin:0 10px}
+    </style>
 </head>
 <body>
-    
+<div class="wrapper" style="position:relative">
+    <h2 style="background:#4d4d4d;color:#fff;font-size:20px;line-height:40px;padding:40px 0 100px 10px;">
+        Resume Manager
+    </h2>
+    <section style="background:none;position:relative;top:-80px;margin:auto;width:620px;text-align:center">
+        <div style="margin:auto;width:140px;height:140px;border-radius:50%;background-position:center;background-size:cover;background-repeat:no-repeat;background-image:url(./assets/profile.jpg)"></div>
+        <div style="margin:15px 5px 0;font-weight:700">abc@defg.com</div>
+        <button class="btn" style="margin:15px 5px 0;width:140px;height:46px;background-image:linear-gradient(#f9f9f9,#dedede);border-radius:0">프로필 사진 변경</button>
+        <button class="btn" style="margin:15px 5px 0;width:60px;height:46px;background-image:linear-gradient(#f9f9f9,#dedede);border-radius:0">삭제</button>
+    </section>
+    <section style="margin-top:-30px;padding-bottom:10px">
+        <h2>나의 이력서</h2>
+        <article class="resume">
+            <div class="left">
+                <label>no.1</label>
+                <div class="resume-title">사용자가 정의한 제목</div>
+                <div class="resume-school">프론트엔드 개발 6기</div>
+            </div>
+            <div class="right">
+                <div>발행 중</div>
+                <div>2017.12.21 발행됨</div>
+                <div style="font-size:14px">매칭 가능성이 높은 참여기업 <span style="font-weight:700">2개</span></div>
+            </div>
+        </article>
+        <article class="resume">
+            <div class="left">
+                <label>no.2</label>
+                <div class="resume-title">사용자가 정의한 제목</div>
+                <div class="resume-school">프론트엔드 개발 6기</div>
+            </div>
+            <div class="right">
+                <div>미발행</div>
+                <div>2017.12.21 발행됨</div>
+                <div style="font-size:14px">매칭 가능성이 높은 참여기업 <span style="font-weight:700">2개</span></div>
+            </div>
+        </article>
+        <article class="resume">
+            <div class="left">
+                <label>no.3</label>
+                <div class="resume-title">사용자가 정의한 제목</div>
+                <div class="resume-school">프론트엔드 개발 6기</div>
+            </div>
+            <div class="right">
+                <div>미발행</div>
+                <div>2017.12.21 발행됨</div>
+                <div style="font-size:14px">매칭 가능성이 높은 참여기업 <span style="font-weight:700">2개</span></div>
+            </div>
+        </article>
+        <article class="resume">
+            <div class="left">
+                <label>no.3</label>
+                <div class="resume-title">사용자가 정의한 제목</div>
+                <div class="resume-school">프론트엔드 개발 6기</div>
+            </div>
+            <div class="right">
+                <div>미발행</div>
+                <div>2017.12.21 발행됨</div>
+                <div style="font-size:14px">매칭 가능성이 높은 참여기업 <span style="font-weight:700">2개</span></div>
+            </div>
+        </article>
+        <div style="text-align:center">
+            <span class="paging" style="font-weight:700">1</span>
+            <span class="paging">2</span>
+            <span class="paging">3</span>
+            <span class="paging">4</span>
+        </div>
+    </section>
+</div>
 </body>
 </html>
