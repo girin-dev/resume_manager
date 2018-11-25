@@ -10,7 +10,7 @@
         @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
         ul {margin:0}
         body {background:#f6f6f6;width:100%;font-family:"Noto Sans KR",sans-serif}
-        h2{font-size:16px;font-weight:700;height:40px;line-height:40px;padding-left:30px}
+        h2{font-size:16px;font-weight:700;height:40px;line-height:40px;padding-left:30px;margin:0}
         section{margin-bottom:40px}
         section h2:before{content:"- "}
         input[type=text]{box-sizing:border-box;width:100%;padding:10px 24px;border:1px solid #d0d4d9;border-radius:3px;font-size:14px;transition:border 0.25s}
@@ -19,22 +19,25 @@
         select{box-sizing:border-box;padding:10px 24px;border:1px solid #d0d4d9;border-radius:3px;font-size:14px;transition:border 0.25s}
         input[type=text]:focus{border:1px solid #666;outline:none}
         input[type=text]:hover{border:1px solid #666;outline:none;transition:border 0.25s}
-        .wrapper{background:pink;max-width:1280px;margin:0 auto}
+        textarea{padding:0;box-sizing:border-box;padding:10px 10px;border:1px solid #d0d4d9;border-radius:3px;font-size:14px;transition:border 0.25s}
+        .wrapper{max-width:1280px;margin:0 auto}
         .wrapper>section{background:#fff}
-        .wrapper>section h2 {background:#ebebeb}
+        .wrapper>section h2 {background:#d9d9d9}
 
         .visible{display:block}
         .hidden{display:none}
         .inner-section{padding:40px}
         .btn{width:130px;height:40px;border-radius:40px;font-size:14px;font-weight:700;box-shadow:0 2px 1px 0 rgba(0,0,0,0.05)}
         .btn-confirm{background:#323232;color:#fff;border:1px solid #323232}
+        .btn-confirm-posit{margin:20px 50% 0;transform:translateX(-50%)}
         .btn-cancel{background:#fff;color:#4c4c4c;border:1px solid #ebebeb}
 
-        .profile label {display:inline-block;width:120px;padding-left:0 10px;margin-right:20px}
-        .profile li {margin:15px 0}
-        .profile:after{content:"";display:block;clear:both}
+        .inputlist label {display:inline-block;width:130px;padding-left:0 10px;margin-right:20px;font-size:14px;color:#47525d}
+        .inputlist li {margin:15px 0}
+        .inputlist:after{content:"";display:block;clear:both}
         .short{max-width:220px}
-        .long{max-width:380px}
+        .mid{max-width:380px}
+        .long{max-width:900px}
     </style>
 </head>
 <body>
@@ -44,7 +47,7 @@
         <section>
             <h2>기본정보</h2>
             <!-- profile image -->
-            <div class="inner-section profile">
+            <div class="inner-section inputlist">
                 <div style="float:left;padding:0 10px">
                     <input type="file">
                 </div>
@@ -61,25 +64,25 @@
                             <label>희망직무</label><input type="text" class="short">
                         </li>
                         <li>
-                            <label>한 줄 소개</label><input type="text" class="long">
+                            <label>한 줄 소개</label><input type="text" class="mid">
                         </li>
                     </ul>
                     <!-- contact -->
                     <ul>
                         <li>
-                            <label>전화번호</label><input type="text" class="long">
+                            <label>전화번호</label><input type="text" class="mid">
                         </li>
                         <li>
-                            <label>이메일</label><input type="text" class="long">
+                            <label>이메일</label><input type="text" class="mid">
                         </li>
                         <li>
-                            <label>Homepage 주소</label><input type="text" class="long">
+                            <label>Homepage 주소</label><input type="text" class="mid">
                         </li>
                         <li>
-                            <label>Github 주소</label><input type="text" class="long">
+                            <label>Github 주소</label><input type="text" class="mid">
                         </li>
                         <li>
-                            <label>Facebook 주소</label><input type="text" class="long">
+                            <label>Facebook 주소</label><input type="text" class="mid">
                         </li>
                     </ul>
                 </div>
@@ -119,7 +122,7 @@
                 </ul>
                 <div style="border-top:1px solid #ebebeb;margin-top:10px">
                     <div class="visible">
-                        <button id="addSkill" class="btn btn-confirm" style="margin:20px 50%;transform:translateX(-50%);">추가하기</button>
+                        <button id="addSkill" class="btn btn-confirm btn-confirm-posit">추가하기</button>
                     </div>
                     <div class="hidden" style="margin:20px 0">
                         <select name="" id="" style="width:140px;height:40px;line-height:40px;vertical-align:middle">
@@ -165,15 +168,15 @@
                         <tr>
                             <td style="width:15%">학교명</td>
                             <td style="width:15%">전공</td>
-                            <td style="width:53%">기간</td>
-                            <td style="width:10%">졸업여부</td>
+                            <td style="width:56%">기간</td>
+                            <td style="width:7%">졸업여부</td>
                             <td style="width:7%">관리</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>ㅁㅁ대학교</td>
-                            <td>ㅁㅁ학과</td>
+                            <td>ㅁㅁㅁㅁㅁㅁㅁ학과</td>
                             <td>3000-03-01 부터 3004-12-31 까지</td>
                             <td>졸업</td>
                             <td><button class="btn-td btn-delete">삭제</button></td>
@@ -194,8 +197,8 @@
                         </tr>
                     </tbody>
                 </table>
-                <div style="border-top:1px solid #ebebeb;margin-top:10px">
-                    <button id="addEdu" class="btn btn-confirm" style="margin:20px 50%;transform:translateX(-50%);">추가하기</button>
+                <div style="margin-top:10px">
+                    <button id="addEdu" class="btn btn-confirm btn-confirm-posit">추가하기</button>
                 </div>
             </div>
         </section>
@@ -206,31 +209,33 @@
                 <table>
                     <thead>
                         <tr>
-                            <td>근무처</td>
-                            <td>담당업무</td>
-                            <td>근무기간</td>
-                            <td>최종직위</td>
-                            <td>관리</td>
+                            <td style="width:15%">근무처</td>
+                            <td style="width:20%">담당업무</td>
+                            <td style="width:45%">근무기간</td>
+                            <td style="width:10%">최종직위</td>
+                            <td style="width:5%">관리</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>ㅁㅁ회사</td>
-                            <td>프론트엔드개발</td>
+                            <td>ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</td>
                             <td>3000-03-01 부터 3004-12-31 까지</td>
                             <td>사원</td>
-                            <td>삭제</td>
+                            <td><button class="btn-td btn-delete">삭제</button></td>
                         </tr>
                         <tr>
                             <td><input type="text"></td>
                             <td><input type="text"></td>
+                            <td><input type="text" style="width:40%"> ~ <input type="text" style="width:40%"></td>
                             <td><input type="text"></td>
-                            <td><input type="text"></td>
-                            <td>삭제</td>
+                            <td><button class="btn-td btn-delete">삭제</button></td>
                         </tr>
                     </tbody>
                 </table>
-                <button>추가하기</button>
+                <div style="margin-top:10px">
+                    <button id="addCareer" class="btn btn-confirm btn-confirm-posit">추가하기</button>
+                </div>
             </div>
         </section>
         <!-- 자격사항 -->
@@ -240,71 +245,82 @@
                 <table>
                     <thead>
                         <tr>
-                            <td>자격증이름</td>
-                            <td>발행처</td>
-                            <td>취득일</td>
-                            <td>관리</td>
+                            <td style="width:31%">자격증이름</td>
+                            <td style="width:31%">발행처</td>
+                            <td style="width:31%">취득일</td>
+                            <td style="width:7%">관리</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan="4">등록된 자격사항이 없습니다.</td>
+                            <td>ㅁㅁㅁㅁㅁㅁ 1급</td>
+                            <td>ㅁㅁㅁㅁㅁㅁㅁㅁㅁ</td>
+                            <td>2018.11.01</td>
+                            <td><button class="btn-td btn-delete">삭제</button></td>
                         </tr>
                         <tr>
                             <td><input type="text"></td>
                             <td><input type="text"></td>
-                            <td><input type="text"></td>
-                            <td>삭제</td>
+                            <td><input type="text" style="width:40%"> ~ <input type="text" style="width:40%"></td>
+                            <td><button class="btn-td btn-delete">삭제</button></td>
                         </tr>
                     </tbody>
                 </table>
-                <button>추가하기</button>
+                <div style="margin-top:10px">
+                    <button id="addCert" class="btn btn-confirm btn-confirm-posit">추가하기</button>
+                </div>
             </div>
         </section>
         <!-- 자기소개서 -->
         <section>
             <h2>자기소개서</h2>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <div class="inner-section">
+                <textarea style="width:100%;" rows="20"></textarea>
+            </div>
         </section>
         <!-- 프로젝트 -->
         <section>
             <h2>프로젝트</h2>
-            <ul>
-                <li>
-                    <ul>
-                        <li>
-                            <span>프로젝트명</span>
-                            <input type="text" name="" id="">
-                        </li>
-                        <li>
-                            <span>기간</span>
-                            <input type="text" name="" id="">
-                        </li>
-                        <li>
-                            <span>역할</span>
-                            <input type="text" name="" id="">
-                        </li>
-                        <li>
-                            <span>프로젝트 홈페이지</span>
-                            <input type="text" name="" id="">
-                        </li>
-                        <li>
-                            <span>Youtube</span>
-                            <input type="text" name="" id="">
-                        </li>
-                        <li>
-                            <span>Slideshare</span>
-                            <input type="text" name="" id="">
-                        </li>
-                        <li>
-                            <span>내용</span>
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
-                        </li>
-                    </ul>
-                    <button>삭제</button>
-                </li>
-            </ul>
-            <button>추가하기</button>
+            <div class="inner-section inputlist">
+                <ul>
+                    <li>
+                        <ul>
+                            <li>
+                                <label>프로젝트명</label>
+                                <input type="text" class="long">
+                            </li>
+                            <li>
+                                <label>기간</label>
+                                <input type="text" class="long">
+                            </li>
+                            <li>
+                                <label>역할</label>
+                                <input type="text" class="long">
+                            </li>
+                            <li>
+                                <label>프로젝트 홈페이지</label>
+                                <input type="text" class="long">
+                            </li>
+                            <li>
+                                <label>Youtube</label>
+                                <input type="text" class="long">
+                            </li>
+                            <li>
+                                <label>Slideshare</label>
+                                <input type="text" class="long">
+                            </li>
+                            <li>
+                                <label style="vertical-align:top">내용</label>
+                                <textarea style="width:100%" class="long" rows="10"></textarea>
+                            </li>
+                        </ul>
+                        <button id="delProject" class="btn btn-cancel" style="margin-left:8px">삭제</button>
+                    </li>
+                </ul>
+                <div style="border-top:1px solid #ebebeb;margin-top:10px">
+                    <button id="addProject" class="btn btn-confirm" style="margin:40px 50% 0;transform:translateX(-50%);">추가하기</button>
+                </div>
+            </div>
         </section>
     </div>
 </body>
