@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Resume manager</title>
     <link rel="stylesheet" href="./style/common.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <style>
         .wrapper{max-width:1280px;margin:0 auto}
         .wrapper>section{background:#fff}
@@ -143,8 +144,8 @@
                 <thead>
                     <tr>
                         <td style="width:15%">학교명</td>
-                        <td style="width:15%">전공</td>
-                        <td style="width:56%">기간</td>
+                        <td style="width:20%">전공</td>
+                        <td style="width:50%">기간</td>
                         <td style="width:7%">졸업여부</td>
                         <td style="width:7%">관리</td>
                     </tr>
@@ -155,7 +156,7 @@
                         <td>ㅁㅁㅁㅁㅁㅁㅁ학과</td>
                         <td>3000-03-01 부터 3004-12-31 까지</td>
                         <td>졸업</td>
-                        <td><button class="btn-td btn-delete">삭제</button></td>
+                        <td><button class="btn-td btn-delete"><i class="fas fa-trash-alt"></i> 삭제</button></td>
                     </tr>
                     <tr>
                         <td><input type="text"></td>
@@ -169,7 +170,7 @@
                                 <option value="stop">중퇴</option>
                             </select>
                         </td>
-                        <td><button class="btn-td btn-delete">삭제</button></td>
+                        <td><button class="btn-td btn-delete"><i class="fas fa-trash-alt"></i> 삭제</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -187,9 +188,9 @@
                     <tr>
                         <td style="width:15%">근무처</td>
                         <td style="width:20%">담당업무</td>
-                        <td style="width:45%">근무기간</td>
+                        <td style="width:40%">근무기간</td>
                         <td style="width:10%">최종직위</td>
-                        <td style="width:5%">관리</td>
+                        <td style="width:7%">관리</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -198,14 +199,14 @@
                         <td>ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ</td>
                         <td>3000-03-01 부터 3004-12-31 까지</td>
                         <td>사원</td>
-                        <td><button class="btn-td btn-delete">삭제</button></td>
+                        <td><button class="btn-td btn-delete"><i class="fas fa-trash-alt"></i> 삭제</button></td>
                     </tr>
                     <tr>
                         <td><input type="text"></td>
                         <td><input type="text"></td>
                         <td><input type="date" style="width:40%"> ~ <input type="date" style="width:40%"></td>
                         <td><input type="text"></td>
-                        <td><button class="btn-td btn-delete">삭제</button></td>
+                        <td><button class="btn-td btn-delete"><i class="fas fa-trash-alt"></i> 삭제</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -232,13 +233,13 @@
                         <td>ㅁㅁㅁㅁㅁㅁ 1급</td>
                         <td>ㅁㅁㅁㅁㅁㅁㅁㅁㅁ</td>
                         <td>2018.11.01</td>
-                        <td><button class="btn-td btn-delete">삭제</button></td>
+                        <td><button class="btn-td btn-delete"><i class="fas fa-trash-alt"></i> 삭제</button></td>
                     </tr>
                     <tr>
                         <td><input type="text"></td>
                         <td><input type="text"></td>
                         <td><input type="date"></td>
-                        <td><button class="btn-td btn-delete">삭제</button></td>
+                        <td><button class="btn-td btn-delete"><i class="fas fa-trash-alt"></i> 삭제</button></td>
                     </tr>
                 </tbody>
             </table>
@@ -291,7 +292,7 @@
                             <textarea style="width:100%" class="long" rows="10"></textarea>
                         </li>
                     </ul>
-                    <button id="delProject" class="btn btn-cancel" style="margin-left:8px">삭제</button>
+                    <button id="delProject" class="btn btn-cancel" style="margin-left:8px"><i class="fas fa-trash-alt"></i> 삭제</button>
                 </li>
             </ul>
             <div style="border-top:1px solid #ebebeb;margin-top:10px">
