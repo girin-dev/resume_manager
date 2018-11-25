@@ -8,36 +8,13 @@
     <link rel="stylesheet" href="./style/common.css">
     <style>
         @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
-        ul {margin:0}
-        body {background:#f6f6f6;width:100%;font-family:"Noto Sans KR",sans-serif}
-        h2{font-size:16px;font-weight:700;height:40px;line-height:40px;padding-left:30px;margin:0}
-        section{margin-bottom:40px}
-        section h2:before{content:"- "}
-        input[type=text]{box-sizing:border-box;width:100%;padding:10px 24px;border:1px solid #d0d4d9;border-radius:3px;font-size:14px;transition:border 0.25s}
-        input[type=text]:focus{border:1px solid #666;outline:none}
-        input[type=text]:hover{border:1px solid #666;outline:none;transition:border 0.25s}
-        select{box-sizing:border-box;padding:10px 24px;border:1px solid #d0d4d9;border-radius:3px;font-size:14px;transition:border 0.25s}
-        input[type=text]:focus{border:1px solid #666;outline:none}
-        input[type=text]:hover{border:1px solid #666;outline:none;transition:border 0.25s}
-        textarea{padding:0;box-sizing:border-box;padding:10px 10px;border:1px solid #d0d4d9;border-radius:3px;font-size:14px;transition:border 0.25s}
         .wrapper{max-width:1280px;margin:0 auto}
         .wrapper>section{background:#fff}
         .wrapper>section h2 {background:#d9d9d9}
-
-        .visible{display:block}
-        .hidden{display:none}
         .inner-section{padding:40px}
-        .btn{width:130px;height:40px;border-radius:40px;font-size:14px;font-weight:700;box-shadow:0 2px 1px 0 rgba(0,0,0,0.05)}
-        .btn-confirm{background:#323232;color:#fff;border:1px solid #323232}
-        .btn-confirm-posit{margin:20px 50% 0;transform:translateX(-50%)}
-        .btn-cancel{background:#fff;color:#4c4c4c;border:1px solid #ebebeb}
-
         .inputlist label {display:inline-block;width:130px;padding-left:0 10px;margin-right:20px;font-size:14px;color:#47525d}
         .inputlist li {margin:15px 0}
         .inputlist:after{content:"";display:block;clear:both}
-        .short{max-width:220px}
-        .mid{max-width:380px}
-        .long{max-width:900px}
     </style>
 </head>
 <body>
@@ -120,7 +97,7 @@
                     <li><span>Vue.js</span></li>
                     <li><span>Restful API</span></li>
                 </ul>
-                <div style="border-top:1px solid #ebebeb;margin-top:10px">
+                <div style="border-top:1px solid #ebebeb;padding-top:10px">
                     <div class="visible">
                         <button id="addSkill" class="btn btn-confirm btn-confirm-posit">추가하기</button>
                     </div>
